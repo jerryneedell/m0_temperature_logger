@@ -7,8 +7,8 @@ sample code for loging cpu temperature to M0 file system
 This is a simple modification to an example of writing to the FS provided by Don Blalr.
 Just getting started.
 
-Next stpes are to add error checking, especially for when the FS is full.
-Temperaturd sampling rate should be much slower for a useful example as well.
+Next steps are to add error checking, especially for when the FS is full.
+Temperature sampling rate should be much slower for a useful example as well.
 
 
 Uses pin D0 to determine File System State
