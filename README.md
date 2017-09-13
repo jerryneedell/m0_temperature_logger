@@ -5,6 +5,8 @@ It does not check for the File system being full - yet
 
 sample code for loging cpu temperature to M0 file system
 This is a simple modification to an example of writing to the FS provided by Don Blalr.
+https://github.com/edgecollective/circuitpython-flash-logger
+
 Just getting started.
 
 Next steps are to add error checking, especially for when the FS is full.
