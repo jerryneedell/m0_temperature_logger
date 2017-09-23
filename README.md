@@ -1,7 +1,6 @@
 # m0_temperature_logger
 
 WARNING - This is test code - use at your own risk!
-It does not check for the File system being full - yet
 
 sample code for loging cpu temperature to M0 file system
 This is a simple modification to an example of writing to the FS provided by Don Blalr.
