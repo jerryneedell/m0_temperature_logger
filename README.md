@@ -80,7 +80,9 @@ storage.remount("/", switch.value) # switch.value==False means datalogging mode:
 
 This will read the value of the D0 pin, which has been set to a pullup: it reads True (HIGH, 1, etc in Arduino) if it has not been grounded, but if connected to ground it reads False. Since we want it to be readonly False when the board should be written by the code and not USB, you only need to connect the D0 pin to ground when you want the board to be able to write via the code.
 
-The Circuit Playground makes this easy: the D0 pin is the toggle switch. On other boards, like the Gemma M0, you’ll need to use wires or alligator clips. This example runs on all the CircuitPlayGound Express, Gemma M0 and Trinket M0.
+This example should work on all the M0 boards using D0 for the switch and the LED on D13. Of course you can modifiy thos settings as desired to use a differnt pin or to use a neopixel.
+
+On the Circuit Playground express, you can change the code to use the "slide switch" by replacing all reference to "D0" to "SLIDE_SWITCH" or equivalently "D7".
 
 
 
