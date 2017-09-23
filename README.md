@@ -64,21 +64,25 @@ Only one thing can have write access at a time, though, so by allowing your Pyth
 >>> os.remove("/boot.py")
 ```
 Then reboot the device and you’ll be able to edit via USB as normal.
+
 Selectively setting readonly to False on boot
-Recreate boot.py:
+Use the boot.py in this repository:
 ```
 import digitalio
 import board
 import storage
 
-Switch = digitalio.DigitalInOut(board.D0)
+switch=digitalio.DigitalInOut(board.D0)
 switch.switch_to_input(pull=digitalio.Pull.UP)
 
-storage.remount("/", readonly=switch.value)
+storage.remount("/", switch.value) # switch.value==False means datalogging mode:  allow circuitpython code to write to flash, while making USB read-only.
 ```
+
 This will read the value of the D0 pin, which has been set to a pullup: it reads True (HIGH, 1, etc in Arduino) if it has not been grounded, but if connected to ground it reads False. Since we want it to be readonly False when the board should be written by the code and not USB, you only need to connect the D0 pin to ground when you want the board to be able to write via the code.
 
 The Circuit Playground makes this easy: the D0 pin is the toggle switch. On other boards, like the Gemma M0, you’ll need to use wires or alligator clips. This example runs on all the CircuitPlayGound Express, Gemma M0 and Trinket M0.
+
+
 
 Logging the temperature
 m0_templogger.py  contains exanmple code for logging the temperature to a file.
