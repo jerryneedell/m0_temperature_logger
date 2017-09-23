@@ -93,13 +93,13 @@ Logging the temperature
 m0_templogger.py  contains exanmple code for logging the temperature to a file.
 You can execute it from the REPL:
 ```
-import m0_temlogger
+import m0_templogger
 ```
 or use code.py as the file name for automatic execution oon boot.
 
-This code creates a led variable, sets it to the D13 pin and configures it for output (this is the built-in LED pin).  It also creates a coundown counter to control the logger frequency independenly of the LED blink frequency. For the exampl the temperature is logged once per minute. It is initialised to zero so it writes a value immediately st the start. when it write, the countdown is reset and it jsut blinnks the LED on/off every second (2 second cycle). If it is time to write, it opens the temperature.txt file for appending (so future reboots add to the end of the file instead of overwriting it), gets the temperature and writes it to the file with a line break after each reading (on Windows, some editors like Notepad won’t recognize the line ending). At ech writem the LED is blinked rapidly a few times.
+This code creates an led variable, sets it to the D13 pin and configures it for output (this is the built-in LED pin).  It also creates a coundown counter to control the logging frequency independently of the LED blink frequency. For the example the temperature is logged once per minute. It is initialised to zero so it writes a value immediately at the start. When it writes, the countdown is reset and it just blinks the LED on/off every second (2 second cycle). If it is time to write, it opens the temperature.txt file for appending (so future reboots add to the end of the file instead of overwriting it), gets the temperature and writes it to the file with a line break after each reading (on Windows, some editors like Notepad won’t recognize the line ending). At each write the LED is blinked rapidly a few times.
 
-
+Error Handling
 There could be an error opening the file for writing, or for writing the file: maybe your board doesn’t have D0 pulled low to enable writing. Maybe your internal storage is out of space. The except block handles an OSError exception. If the error code is 28 that means the device is out of space. The LED will blink four times a second to indicate this. Otherwise the “issue” is probably that the board set to read-only (which is probably by design!) and will blink once a second.
 
 Keep going
