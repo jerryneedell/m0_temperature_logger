@@ -11,6 +11,13 @@ Thanks to https://github.com/sigafoos for writing a guide and for adding the err
 Note: make sure you have CircuitPython 2.0.0 or above on your device!
 
 2.0.0 was released 9/12/2017, so if you bought your board before or around that time there’s a good chance it needs updating. Download the update and follow the instructions on the 2.0.0 release page.
+
+This example should work on all the M0 boards using D0 for the switch and the LED on D13. Of course you can modifiy thos settings as desired to use a differnt pin or to use a neopixel.
+
+On the Circuit Playground express, you can change the code to use the "slide switch" by replacing all reference to "D0" to "SLIDE_SWITCH" or equivalently "D7". Also note taht on the Circuit PlayGround Express the pad for pin "D0" is the one labled "A6/RX".
+
+
+
 Getting the temperature
 One of the new packages included in 2.0.0 is microcontroller.cpu.temperature: this gives you the temperature (in Celsius) of the board’s CPU. It isn’t as accurate as a TMP36 or DHT22, since it’s the temperature of the CPU, not the ambient air, but it’s pretty close!
 
@@ -79,10 +86,6 @@ storage.remount("/", switch.value) # switch.value==False means datalogging mode:
 ```
 
 This will read the value of the D0 pin, which has been set to a pullup: it reads True (HIGH, 1, etc in Arduino) if it has not been grounded, but if connected to ground it reads False. Since we want it to be readonly False when the board should be written by the code and not USB, you only need to connect the D0 pin to ground when you want the board to be able to write via the code.
-
-This example should work on all the M0 boards using D0 for the switch and the LED on D13. Of course you can modifiy thos settings as desired to use a differnt pin or to use a neopixel.
-
-On the Circuit Playground express, you can change the code to use the "slide switch" by replacing all reference to "D0" to "SLIDE_SWITCH" or equivalently "D7".
 
 
 
