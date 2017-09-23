@@ -6,7 +6,7 @@ sample code for loging cpu temperature to M0 file system
 This example was based on an example of writing to the FS provided by Don Blalr.
 https://github.com/edgecollective/circuitpython-flash-logger
 
-Thanks to https://github.com/sigafoos for writing th guide and for adding the error handling. 
+Thanks to https://github.com/sigafoos for writing a guide and for adding the error handling.  Mush of this readme was taken from the guide.
 
 Note: make sure you have CircuitPython 2.0.0 or above on your device!
 
