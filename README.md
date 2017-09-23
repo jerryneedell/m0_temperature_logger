@@ -6,12 +6,6 @@ sample code for loging cpu temperature to M0 file system
 This is a simple modification to an example of writing to the FS provided by Don Blalr.
 https://github.com/edgecollective/circuitpython-flash-logger
 
-Just getting started.
-
-Next steps are to add error checking, especially for when the FS is full.
-Temperature sampling rate should be much slower for a useful example as well.
-
-
 Uses pin D0 to determine File System State
 D0 - Grounded - boot to allow CircuitPython to Write to FS
 D0- Open - boot to normal USB writeble FS
